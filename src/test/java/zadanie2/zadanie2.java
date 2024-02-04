@@ -2,11 +2,8 @@ package zadanie2;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 
 public class zadanie2 {
@@ -74,12 +71,9 @@ public class zadanie2 {
         } catch (Exception e) {
             e.printStackTrace();
 
-
-            // Dalsze kroki po zalogowaniu...
-//
-//        } finally {
-//            // Zamknięcie przeglądarki po zakończeniu testu
-//            driver.quit();
+        } finally {
+            // Zamknięcie przeglądarki po zakończeniu testu
+            driver.quit();
         }
     }
 }
