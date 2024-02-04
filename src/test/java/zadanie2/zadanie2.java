@@ -2,8 +2,14 @@ package zadanie2;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.Duration;
 
 
 public class zadanie2 {
@@ -59,20 +65,53 @@ public class zadanie2 {
             quantityInput.clear();
             quantityInput.sendKeys(Keys.HOME, Keys.chord(Keys.SHIFT, Keys.END), "5");
 
-            WebElement addToCartButton6 = driver.findElement(By.xpath("//*[@id=\"add-to-cart-or-refresh\"]/div[2]/div[1]/div[2]/button"));
+            WebElement addToCartButton6 = driver.findElement(By.xpath("//*[@id=\"add-to-cart-or-refresh\"]/div[2]/div/div[2]/button"));
             addToCartButton6.click();
 
-            WebElement addToCartButton7 = driver.findElement(By.id("#blockcart-modal"));
+
+
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"blockcart-modal\"]/div/div/div[2]/div/div[2]/div/div/a")));
+
+
+            WebElement addToCartButton7 = driver.findElement(By.xpath("//*[@id=\"blockcart-modal\"]/div/div/div[2]/div/div[2]/div/div/a"));
             addToCartButton7.click();
 
+            WebElement addToCartButton8 = driver.findElement(By.xpath("//*[@id=\"main\"]/div/div[2]/div[1]/div[2]/div/a"));
+            addToCartButton8.click();
+
+            WebElement addToCartButton9 = driver.findElement(By.name("confirm-addresses"));
+            addToCartButton9.click();
+
+            WebElement addToCartButton10 = driver.findElement(By.xpath("//*[@id=\"js-delivery\"]/div/div[1]/div[1]"));
+            addToCartButton10.click();
+
+            WebElement addToCartButton11 = driver.findElement(By.name("confirmDeliveryOption"));
+            addToCartButton11.click();
+
+            WebElement addToCartButton12 = driver.findElement(By.id("payment-option-1"));
+            addToCartButton12.click();
+
+            WebElement addToCartButton13 = driver.findElement(By.id("conditions_to_approve[terms-and-conditions]"));
+            addToCartButton13.click();
+
+            WebElement addToCartButton14 = driver.findElement(By.id("payment-confirmation"));
+            addToCartButton14.click();
 
 
+            File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+            Path destinationPath = Paths.get("C:\\Users\\W10\\Desktop\\tutaj screen.jpg");
+
+
+            screenshotFile.renameTo(destinationPath.toFile());
+
+            System.out.println("Zrzut ekranu: " + destinationPath);
 
         } catch (Exception e) {
             e.printStackTrace();
 
         } finally {
-            // Zamknięcie przeglądarki po zakończeniu testu
             driver.quit();
         }
     }
