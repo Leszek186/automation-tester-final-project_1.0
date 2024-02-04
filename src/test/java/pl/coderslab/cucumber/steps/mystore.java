@@ -38,7 +38,7 @@ public class mystore {
 
     @And("wejdzie klikając w kafelek Addresses po zalogowaniu")
     public void wejdzie_klikając_w_kafelek_addresses_po_zalogowaniu() {
-        WebElement addressesTile = webDriver.findElement(By.xpath("//*[@id=\"addresses-link\"]"));
+        WebElement addressesTile = webDriver.findElement(By.xpath("//*[@id=\"address-link\"]"));
         addressesTile.click();
     }
 
@@ -64,7 +64,7 @@ public class mystore {
 
         phoneInput.sendKeys("731834556");
 
-        WebElement saveButton = webDriver.findElement(By.name("submitAddress")); // tutaj miałem problem z selektorem
+        WebElement saveButton = webDriver.findElement(By.xpath("//*[@id=\"content\"]/div/div/form/footer/button"));
         saveButton.click();
     }
 
@@ -72,10 +72,10 @@ public class mystore {
     public void nowy_adres_wyświetlony_na_liście_adresów() {
 
         try {
-            WebElement successAlert = this.driver.findElement(By.xpath("//*[@id=\"center_column\"]/p[1]"));
-            assertEquals("alert o sukcesie", successAlert.getText()); // Sprawdzam czy się zgadza adres
+            WebElement successAlert = driver.findElement(By.xpath("//*[@id=\"center_column\"]/p[1]"));
+            assertEquals("alert o sukcesie", successAlert.getText());
         } catch (NoSuchElementException ex) {
-            fail("adrse się nie zgadza"); // ustalam czy adres się zgadza
+            fail("adrse się nie zgadza");
         }
     }
 }
