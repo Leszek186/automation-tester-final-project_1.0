@@ -1,23 +1,48 @@
-![Coders-Lab-1920px-no-background](https://user-images.githubusercontent.com/30623667/104709387-2b7ac180-571f-11eb-9b94-517aa6d501c9.png)
+Final project for the Automation Tester course.
+This repository contains a test automation project for the mystore.com online store. The project is designed to automate the testing of various functionalities of the mystore.com website using Selenium WebDriver and Cucumber framework.
 
-# Kilka ważnych informacji
+Table of Contents
+General Info
+Project aims to automate testing processes for the mystore.com online store. By utilizing Selenium WebDriver and Cucumber framework, I intend to streamline the testing of various functionalities such as user registration, address management, and product purchasing. The purpose of this project is to enhance the efficiency and accuracy of testing procedures, ultimately ensuring a seamless user experience on the mystore.com platform.
 
-Przed przystąpieniem do rozwiązywania zadań przeczytaj poniższe wskazówki
+Technologies Used
+Selenium WebDriver
+Cucumber
+Java
 
-## Jak zacząć?
+Screenshots
+![image](https://github.com/Leszek186/automation-tester-final-project_1.0/assets/141226298/2a2632a6-7bd0-4999-98cb-0e7f368e1abf)
 
-1. Stwórz [*fork*](https://guides.github.com/activities/forking/) repozytorium z zadaniami.
-2. Sklonuj fork repozytorium (stworzony w punkcie 1) na swój komputer. Użyj do tego komendy `git clone adres_repozytorium`
-Adres możesz znaleźć na stronie forka repozytorium po naciśnięciu w guzik "Clone or download".
-3. Rozwiąż zadania i skomituj zmiany do swojego repozytorium. Użyj do tego komend `git add nazwa_pliku`.
-Jeżeli chcesz dodać wszystkie zmienione pliki użyj `git add .` 
-Pamiętaj że kropka na końcu jest ważna!
-Następnie skommituj zmiany komendą `git commit -m "nazwa_commita"`
-4. Wypchnij zmiany do swojego repozytorium na GitHubie.  Użyj do tego komendy `git push origin master`
-5. Stwórz [*pull request*](https://help.github.com/articles/creating-a-pull-request) do oryginalnego repozytorium, gdy skończysz wszystkie zadania.
 
-Poszczególne zadania rozwiązuj w odpowiednich plikach.
+Setup
 
-### Poszczególne zadania rozwiązuj w odpowiednich plikach.
+Workshop Task 1 - Selenium WebDriver + Cucumber
 
-**Repozytorium z ćwiczeniami zostanie usunięte 2 tygodnie po zakończeniu kursu. Spowoduje to też usunięcie wszystkich forków, które są zrobione z tego repozytorium.**
+Manually create a user on the website https://mystore-testlab.coderslab.pl.
+
+Write a script that:
+
+will log in to the created user,
+will navigate by clicking on the Addresses tile after logging in (the address we should end up at is: https://mystore-testlab.coderslab.pl/index.php?controller=addresses),
+will click on + Create new address,
+will fill in the New address form - the data should be taken from the Examples table in Gherkin (alias, address, city, zip/postal code, country, phone),
+will check if the data in the added address is correct.
+
+
+Workshop Task 2 
+
+Write a script that:
+
+logs in with the same user from task 1,
+selects the Hummingbird Printed Sweater for purchase (additional option: check if there is a 20% discount on it),
+selects size M (additional option: parameterize the size selection to choose from S, M, L, XL),
+selects 5 pieces according to the parameter provided in the test (additional option: parameterize the quantity of items),
+adds the product to the cart,
+proceeds to the checkout option,
+confirms the address (you can manually add it beforehand),
+selects the pickup method - PrestaShop "pick up in store",
+selects the payment option - Pay by Check,
+clicks on "order with an obligation to pay",
+takes a screenshot of the order confirmation and the amount.
+
+
