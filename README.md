@@ -3,7 +3,7 @@ This repository contains a test automation project for the mystore.com online st
 
 Table of Contents
 General Info
-Project aims to automate testing processes for the mystore.com online store. By utilizing Selenium WebDriver and Cucumber framework, I intend to streamline the testing of various functionalities such as user registration, address management, and product purchasing. The purpose of this project is to enhance the efficiency and accuracy of testing procedures, ultimately ensuring a seamless user experience on the mystore.com platform.
+Project aims to automate testing processes for the mystore.com online store. By utilizing Selenium WebDriver and Cucumber framework, I intend to streamline the testing of various functionalities such as user registration, address management, and product purchasing. The purpose of this project is to enhance the efficiency and accuracy of testing procedures, ultimately ensuring a seamless user experience on the mystore.com platform
 
 Technologies Used
 Selenium WebDriver
